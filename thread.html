@@ -24,10 +24,10 @@
             <a href="index.html">dotcheat</a>
 
             <div class="navmenu">
-                <a href="main.html">Forum</a>
+                <a href="main.html" class="is-active">Forum</a>
                 <a href="#">Tes2</a>
                 <a href="#">Tes3</a>
-                <a href="index.html" class="is-active">Home</a>
+                <a href="index.html">Home</a>
             </div>
 
             <button class="navbarbutton">
@@ -37,29 +37,35 @@
         </button>
         </div>
     </nav>
-
     <div class="spacer wave1t flip"></div>
 
-    <section>
-        <p>Temporary text about dotcheat</p>
-    </section>
-    <div class="spacer wave1t"></div>
-    <section class="blapis">
-        <h1>Create an account now!</h1>
-        <div>
-            <button class="box" id="button">Sign Up</button>
+    <div class="threadheader">
+        <h4 class="threadtitle">Matematik</h4>
+
+        <div class="threadbottom">
+            <p class="threadtimestamp">10/10/2021</p>
+            <p class="threadcomment-count">4 comments</p>
         </div>
-    </section>
+    </div>
+    <div class="threadaddcomment">
+        <textarea class="threadtextarea"></textarea>
+        <button class="threadbutton">add comment</button>
+    </div>
+    <div class="threadcomments">
 
-    <div class="spacer wave1"></div>
-
+        <div class="threadcomment">
+            <div class="topthreadcomment">
+                <p class="commentuser">Novak</p>
+                <p class=" commenttimestamp ">10/10/2020</p>
+            </div>
+            <div class="threadcomment-content">
+                Novaks comment
+            </div>
+        </div>
+    </div>
 </body>
 
 <script>
-    document.getElementById('button').addEventListener('click', function() {
-        document.querySelector('.box').classList.add('boxactive');
-    });
-
     const hmenu = document.querySelector('.navbarbutton');
     hmenu.addEventListener('click', function() {
         this.classList.toggle('is-active')

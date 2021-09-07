@@ -1,191 +1,372 @@
- /* Main CSS Styling */
- 
- body {
-     margin: 0;
-     font-family: Ubuntu;
-     color: white;
-     background-color: #38618C;
-     overflow-x: hidden;
- }
- 
- body::-webkit-scrollbar {
-     display: none;
- }
- 
- p {
-     font-size: 18;
- }
- 
- h0 {
-     font-size: 72;
-     margin-top: 180;
- }
- 
- h1 {
-     font-size: 36;
- }
- 
- section {
-     position: relative;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     min-height: 400px;
-     padding: 100px 20vw;
- }
- /* Color Classes */
- 
- .prussian {
-     color: #1C3146;
- }
- 
- .lapis {
-     color: #38618C;
- }
- 
- .blue {
-     color: #35A7FF;
- }
- 
- .minion {
-     color: #FFE74C;
- }
- 
- .rose {
-     color: #FF5964;
- }
- 
- .orange {
-     color: #FF2D32;
- }
- /* Background Color Classes */
- 
- .bprussian {
-     background-color: #1C3146;
- }
- 
- .blapis {
-     background-color: #38618C;
- }
- 
- .bblue {
-     background-color: #35A7FF;
- }
- 
- .bminion {
-     background-color: #FFE74C;
- }
- 
- .brose {
-     background-color: #FF5964;
- }
- 
- .borange {
-     background-color: #FF2D32;
- }
- /* Style Classes */
- 
- .spacer {
-     aspect-ratio: 960/300;
-     width: 100%;
-     background-repeat: no-repeat;
-     background-position: center;
-     background-size: cover;
- }
- 
- .layer1 {
-     background-image: url('./layer1.svg');
- }
- 
- .flip {
-     transform: rotate(180deg);
- }
- 
- .curve {
-     position: absolute;
-     height: 225px;
-     width: 100%;
-     bottom: 0;
- }
- 
- .curve::before {
-     content: '';
-     display: block;
-     position: absolute;
-     border-radius: 50% 50%;
-     width: 70%;
-     height: 140%;
-     background-color: #38618C;
-     transform: translate(64%, 55%);
- }
- 
- .curve::after {
-     content: '';
-     display: block;
-     position: absolute;
-     border-radius: 100% 100%;
-     width: 70%;
-     height: 140%;
-     background-color: #1C3146;
-     transform: translate(-12%, -10%);
-     z-index: -1;
- }
- 
- .container {
-     background: grey;
-     box-sizing: border-box;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     width: 60vw;
-     height: 30vh;
- }
- 
- .box {
-     border-radius: 20px;
-     border-color: transparent;
-     font-family: Ubuntu;
-     font-size: 22;
-     width: 100px;
-     height: 60px;
-     background: #FF5964;
-     box-shadow: 10px 10px 10px #2A4969, 10px 10px 10px #38618C, 0 0 0 #2A4969 inset, 0 0 0 #38618C inset;
- }
- 
- .boxactive {
-     border-color: transparent;
-     border-radius: 20px;
-     width: 100px;
-     height: 60px;
-     background: #FF5964;
-     box-shadow: 0 0 0 #2A4969, 0 0 0 #38618C, 10px 10px 10px #2A4969 inset, -10px -10px 10px #38618C inset;
-     animation: boxactive 3s cubic-bezier(0.16, 1, 0.3, 1) 1;
-     animation-fill-mode: forwards;
- }
- 
- @keyframes boxactive {
-     0% {
-         width: 100px;
-         height: 60px;
-         background: #FF5964;
-         box-shadow: 0 0 0 #2A4969, 0 0 0 #38618C, 10px 10px 10px #2A4969 inset, -10px -10px 10px #38618C inset;
-     }
-     25% {
-         width: 100px;
-         height: 60px;
-         background: #FF5964;
-         box-shadow: 10px 10px 10px #2A4969, 10px 10px 10px #38618C, 0 0 0 #2A4969 inset, 0 0 0 #38618C inset;
-     }
-     50% {
-         width: 100px;
-         height: 240px;
-         background: #FF5964;
-         box-shadow: 10px 10px 10px #2A4969, 10px 10px 10px #38618C, 0 0 0 #2A4969 inset, 0 0 0 #38618C inset;
-     }
-     100% {
-         width: 480px;
-         height: 240px;
-         background: #FF5964;
-         box-shadow: 40px 40px 40px #2A4969, 0 0 0 #38618C, 0 0 0 #2A4969 inset, 2px 2px 2px #38618C inset;
-     }
- }
+:root {
+    --prussian: #1C3146;
+    --lapis: #38618C;
+    --blue: #35A7FF;
+    --minion: #FFE74C;
+    --rose: #FF5964;
+    --orange: #FF2D32;
+}
+
+
+/* Main CSS Styling */
+
+body {
+    margin: 0;
+    font-family: Ubuntu;
+    color: white;
+    background-color: var(--prussian);
+    overflow-x: hidden;
+}
+
+ol,
+li {
+    list-style: none;
+    margin-right: 20px;
+    margin-bottom: 2.5vh;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+p {
+    font-size: 18;
+}
+
+h0 {
+    font-size: 72;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20vw 20vh;
+}
+
+
+/* Color Classes */
+
+.prussian {
+    color: var(--prussian);
+}
+
+.lapis {
+    color: var(--lapis);
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.minion {
+    color: var(--minion);
+}
+
+.rose {
+    color: var(--rose);
+}
+
+.orange {
+    color: var(--orange);
+}
+
+
+/* Background Color Classes */
+
+.bprussian {
+    background-color: var(--prussian);
+}
+
+.blapis {
+    background-color: var(--lapis);
+}
+
+.bblue {
+    background-color: var(--blue);
+}
+
+.bminion {
+    background-color: var(--minion);
+}
+
+.brose {
+    background-color: var(--rose);
+}
+
+.borange {
+    background-color: var(--orange);
+}
+
+
+/* Style Classes */
+
+.navcontainer {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navcontainer a {
+    color: white;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 22;
+}
+
+nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background-color: var(--lapis);
+    padding: 16px 32px;
+    border-bottom: 3px solid var(--rose);
+}
+
+.navbarbutton {
+    display: block;
+    position: relative;
+    z-index: 1;
+    user-select: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+.navbarbutton span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background-color: var(--blue);
+    border-radius: 6px;
+    z-index: 1;
+    transform-origin: 0 0;
+    transition: 0.4s;
+}
+
+.navbarbutton:hover span:nth-child(2) {
+    transform: translateX(10px);
+    background-color: var(--blue);
+}
+
+.navbarbutton.is-active span:nth-child(1) {
+    transform: translate(0px, -2px) rotate(45deg);
+}
+
+.navbarbutton.is-active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(15px);
+}
+
+.navbarbutton.is-active span:nth-child(3) {
+    transform: translate(-3px, 3px) rotate(-45deg);
+}
+
+.navmenu {
+    display: none;
+    flex: 1 1 0%;
+    justify-content: flex-end;
+    margin: 0 -16px;
+}
+
+@media (min-width:768px) {
+    .navbarbutton {
+        display: none;
+    }
+    .navmenu {
+        display: flex;
+    }
+}
+
+.navmenu a {
+    color: white;
+    margin: 0 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.4s;
+    padding: 8px 16px;
+    border-radius: 99px;
+    font-size: 18;
+}
+
+.navmenu a.is-active,
+.navmenu a:hover {
+    background-color: var(--prussian);
+}
+
+.spacer {
+    aspect-ratio: 960/200;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.wave1 {
+    background-image: url('./wave1.svg');
+}
+
+.wave1t {
+    background-image: url('./wave1t.svg')
+}
+
+.circle1 {
+    background-image: url('./circle1.svg');
+}
+
+.background {
+    aspect-ratio: 960/600;
+    width: 100%;
+}
+
+.gradientMB {
+    background-image: url('./gradiantMB.svg');
+}
+
+.flip {
+    transform: rotate(180deg);
+}
+
+.container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 30vh;
+}
+
+.box {
+    border-radius: 20px;
+    border-color: transparent;
+    font-family: Ubuntu;
+    font-size: 22;
+    width: 100px;
+    height: 60px;
+    background: #FF5964;
+    box-shadow: 10px 10px 10px #2A4969, 10px 10px 10px #38618C, 0 0 0 #2A4969 inset, 0 0 0 #38618C inset;
+}
+
+.boxactive {
+    border-color: transparent;
+    width: 100px;
+    height: 60px;
+    background: #FF5964;
+    box-shadow: 0 0 0 #2A4969, 0 0 0 #38618C, 10px 10px 10px #2A4969 inset, -10px -10px 10px #38618C inset;
+    animation: boxactive 3s cubic-bezier(0.16, 1, 0.3, 1) 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes boxactive {
+    0% {
+        width: 100px;
+        height: 60px;
+        background: #FF5964;
+        box-shadow: 0 0 0 #2A4969, 0 0 0 #38618C, 10px 10px 10px #2A4969 inset, -10px -10px 10px #38618C inset;
+    }
+    25% {
+        width: 100px;
+        height: 60px;
+        background: #FF5964;
+        box-shadow: 10px 10px 10px #2A4969, 10px 10px 10px #38618C, 0 0 0 #2A4969 inset, 0 0 0 #38618C inset;
+    }
+    50% {
+        width: 100px;
+        height: 520px;
+        background: #FF5964;
+        box-shadow: 10px 10px 10px #2A4969, 10px 10px 10px #38618C, 0 0 0 #2A4969 inset, 0 0 0 #38618C inset;
+    }
+    100% {
+        width: 520px;
+        height: 520px;
+        background: #FF5964;
+        box-shadow: 40px 40px 40px #2A4969, 0 0 0 #38618C, 0 0 0 #2A4969 inset, 0 0 0 #38618C inset;
+    }
+}
+
+
+/* Style Main HTML */
+
+.forumrow {
+    background-color: var(--blue);
+    border-radius: 20px;
+}
+
+.forumtitle {
+    color: white;
+    padding-left: 20px;
+    font-size: 24;
+}
+
+h4 {
+    margin: 0;
+    padding-top: 20;
+}
+
+.forumbottom {
+    display: flex;
+    color: whitesmoke;
+}
+
+.forumtimestamp {
+    color: white;
+    padding-right: 10px;
+    padding-left: 20px;
+}
+
+.forumcomment-count {
+    color: white;
+}
+
+.threadheader {
+    color: white;
+    padding-left: 20px;
+}
+
+.threadtitle {
+    color: white;
+    font-size: 24;
+}
+
+.threadbottom {
+    color: whitesmoke;
+    display: flex;
+}
+
+.threadtimestamp {
+    color: white;
+    padding-right: 30px;
+}
+
+.threadaddcomment {
+    padding-left: 20px;
+}
+
+.threadtextarea {
+    width: 80%;
+    height: 80px;
+    background-color: var(--blue);
+    border-radius: 10px;
+}
+
+.threadbutton {
+    display: block;
+    margin: 10px 0;
+}
+
+.threadcomments {
+    padding-left: 20px
+}
